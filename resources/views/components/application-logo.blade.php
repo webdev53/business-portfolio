@@ -1,0 +1,1 @@
+<img src="{{ asset('logo/favicon.png') }}" width="100px" height="30px" alt="">
