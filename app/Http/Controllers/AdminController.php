@@ -16,7 +16,13 @@ class AdminController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        $notification = array(
+          'message' => 'User logout successfully',
+          'alert-type' => 'success'
+
+        );
+
+        return redirect('/login')->with($notification);
     } // end method
 
     // profile
@@ -53,8 +59,25 @@ class AdminController extends Controller
         $data['profile_image']= $filename;
         $data->save();
 
-        return redirect()->route('admin.profile');
+        $notification = array(
+          'message' => 'Admin Profile Updated successfully',
+          'alert-type' => 'success'
+
+        );
+
+        return redirect()->route('admin.profile')->with($notification);
 
       }
+    }
+
+    // change password
+    public function changePassword(){
+      return view('admin.admin_change_password');
+
+    }
+
+    //update password
+    public function updatePassword(Request $request){
+      
     }
 }
