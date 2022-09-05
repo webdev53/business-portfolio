@@ -12,7 +12,8 @@
 
             <h4 class="card-title">Edit Profile Page</h4>
 
-            <form action="">
+            <form method="POST" action="{{ route('store.profile') }}" enctype="multipart/form-data">
+              @csrf
               <div class="row mb-3">
                 <label for="example-search-input" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
