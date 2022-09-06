@@ -58,6 +58,7 @@ class AdminController extends Controller
         $file->move(public_path('upload/admin_images'), $filename);
 
         $data['profile_image']= $filename;
+      }
         $data->save();
 
         $notification = array(
@@ -68,7 +69,6 @@ class AdminController extends Controller
 
         return redirect()->route('admin.profile')->with($notification);
 
-      }
     }
 
     // change password
